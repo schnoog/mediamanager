@@ -1,5 +1,6 @@
 {
     "require": {
-        "sergeytsalkov/meekrodb": "^2.4"
+        "sergeytsalkov/meekrodb": "^2.4",
+        "php-school/cli-menu": "^4.3"
     }
 }

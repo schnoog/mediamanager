@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+
+FILE="$*"
+
+MD5=$(md5sum "$FILE" | cut -d " " -f 1)
+
+SQL="SELECT * FROM sharefiles WHERE sharefilemd5 LIKE '$MD5';"
+
+RETVAL=1
+mysql sharefiles -e "$SQL" | grep "$MD5" >/dev/null && RETVAL=0
+
+if [ "$RETVAL" == "1" ]
+then
+echo "not in DB"
+else
+echo "in DB"
+fi
+
+
+exit $RETVAL

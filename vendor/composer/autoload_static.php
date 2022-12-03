@@ -6,6 +6,38 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita730267ebf2dbfb3c9833cbe46fe81d4
 {
+    public static $files = array (
+        'a4ecaeafb8cfb009ad0e052c90355e98' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/functions.php',
+        '3107fc387871a28a226cdc8c598a0adb' => __DIR__ . '/..' . '/php-school/cli-menu/src/Util/ArrayUtils.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PhpSchool\\Terminal\\' => 19,
+            'PhpSchool\\CliMenu\\' => 18,
+        ),
+        'A' => 
+        array (
+            'Assert\\' => 7,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'PhpSchool\\Terminal\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-school/terminal/src',
+        ),
+        'PhpSchool\\CliMenu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-school/cli-menu/src',
+        ),
+        'Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beberlei/assert/lib/Assert',
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DB' => __DIR__ . '/..' . '/sergeytsalkov/meekrodb/db.class.php',
@@ -20,6 +52,8 @@ class ComposerStaticInita730267ebf2dbfb3c9833cbe46fe81d4
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInita730267ebf2dbfb3c9833cbe46fe81d4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita730267ebf2dbfb3c9833cbe46fe81d4::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInita730267ebf2dbfb3c9833cbe46fe81d4::$classMap;
 
         }, null, ClassLoader::class);
