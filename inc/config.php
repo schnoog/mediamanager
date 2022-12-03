@@ -3,6 +3,12 @@
 
 $data["basepath"] = "/share/";
 $data["indexdir"] = "/share/MediaManager/";
+$data["nextcloud"]["syncdir"] = "/share/AUTOSORT/nextcloud/";
+$data["nextcloud"]["accounts"] = ["volker","nadine" ];
+$data["nextcloud"]["basedir"] = "/share/nextcloud/";
+$data["bashscript_folder"] = "/share/MediaManager/bash_functions/";
+$data["phockup_syncdir"] = "/share/AUTOSORT/";
+
 $data["scandirs"] = [
     "Bilder",
     "Datumsortierte_Bilder",
@@ -10,7 +16,6 @@ $data["scandirs"] = [
     "Musik",
     "Serien",
     "Sonstiges",
-    "Sortierte_Bilder"
 ];
 
 $data["checksum_limited_scandirs"] = [

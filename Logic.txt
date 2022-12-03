@@ -1,0 +1,29 @@
+
+
+Share drive /shares contains the folders
+MediaManager  <--Script directory
+
+Bilder  
+Datumsortierte_Bilder  <- contains the images after sorting with phockup
+Musik  
+nextcloud  <- nextcloud sync folder
+Sonstiges
+
+Serien
+Filme  
+Funpics  
+
+
+
+/share/AUTOSORT/  <-- 	here the files to be sorted should be copied in
+			either manually, or by the Image-Sync script
+
+
+
+
+Image-Sync:
+Checking files in 
+-/share/nextcloud/nadine/
+-/share/nextcloud/volker/
+
+

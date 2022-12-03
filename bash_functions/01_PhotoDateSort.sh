@@ -21,7 +21,7 @@ SOURCES='/share/nextcloud/nadine/
 /share/Bilder/'
 
 
-PHOTOSORTBIN="$BASEDIR""/functions/SortPhotos.sh"
+PHOTOSORTBIN="$BASEDIR""/bash_functions/SortPhotos.sh"
 
 
 for SRC in $SOURCES
