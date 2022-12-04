@@ -20,8 +20,6 @@ function SyncNextCloud(){
             echo "Copy $fn to $nfn " . PHP_EOL;
             mycopy($fn,$nfn);
     }
-
-    phockupSort($data["nextcloud"]["syncdir"]);
 }
 
 

@@ -25,6 +25,9 @@ $menu = (new CliMenuBuilder)
             ->addItem('Sync-Nextcloud with database and copy files', function (CliMenu $menu) {
                 nextcloud_sync_cli();
             })
+            ->addItem('Phockup-Nextcloud to datumssortiert', function (CliMenu $menu) {
+                phockup_sync_nextcloud_cli();
+            })            
             ->addItem('phockup - Autosort -move images', function (CliMenu $menu) {
                 phockup_sync_autosort_cli();
             })

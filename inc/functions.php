@@ -21,11 +21,17 @@ function phockup_sync_autosort_cli(){
 
 function index_share_files_cli(){
     echo "Index shared files". PHP_EOL;
+
     IndexShareFiles();
     echo PHP_EOL . "done" . PHP_EOL;
 }  
 
-
+function phockup_sync_nextcloud_cli(){
+    global $data;
+    echo "Phockup new newcloud files" . PHP_EOL;
+    phockupSort($data["nextcloud"]["syncdir"]);
+    echo PHP_EOL . "done" . PHP_EOL;
+}
 
 
 /**

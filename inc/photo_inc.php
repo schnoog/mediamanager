@@ -19,6 +19,7 @@ function phockupSort($sortdir){
     global $data;
     $phockupbin = $data["bashscript_folder"] . "SortPhotosMove.sh";
     $tmp = `$phockupbin "$sortdir"`; 
+    //  echo $phockupbin .  " $sortdir" . PHP_EOL;
 
 }
 
