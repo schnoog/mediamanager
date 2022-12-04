@@ -16,33 +16,67 @@ $itemCallable = function (CliMenu $menu) {
 
 
 
+$data["verbose-copy"] = false;
+
+
 $menu = (new CliMenuBuilder)
-    ->setTitle('CLI Menu')
-    ->addItem('First Item', $itemCallable)
-    ->addLineBreak('-')
-    ->addSubMenu('Sync', function (CliMenuBuilder $b) {
-        $b->setTitle('CLI Menu > Sync')
-            ->addItem('Sync-Nextcloud with database and copy files', function (CliMenu $menu) {
+    ->setTitle('Media Manager CLI')
+    ->enableAutoShortcuts()
+
+    ->addSubMenu('[N]extCloud-Sync', function (CliMenuBuilder $a) {
+        $a->setTitle('Media Manager CLI > NextCloud-Sync')
+            ->addItem('[A]utomatic run', function (CliMenu $menu) {
+                nextcloud_automatic_cli();
+            })
+            ->addLineBreak('-')        
+            ->addItem('[1]Sync-Nextcloud with database and copy files to AUTOSORT', function (CliMenu $menu) {
                 nextcloud_sync_cli();
             })
-            ->addItem('Phockup-Nextcloud to datumssortiert', function (CliMenu $menu) {
+            ->addItem('[2]Phockup-Nextcloud copies in AUTOSORT to datumssortiert', function (CliMenu $menu) {
                 phockup_sync_nextcloud_cli();
             })            
-            ->addItem('phockup - Autosort -move images', function (CliMenu $menu) {
-                phockup_sync_autosort_cli();
-            })
-            ->addItem('Sync-Datumssortierte Bilder', function (CliMenu $menu) {
+            ->addItem('[3]Sync-Datumssortierte Bilder table entries', function (CliMenu $menu) {
                 scan_datumsortierte_cli();
             })
-            ->addLineBreak('-');
-    })
-    ->addSubMenu('Index', function (CliMenuBuilder $c) {
-        $c->setTitle('CLI Menu > Index')
-            ->addItem('Scan all files in $data["scandirs"]', function (CliMenu $menu) {
+            ->addItem('[4]Scan all files in $data["scandirs"] into fullindex', function (CliMenu $menu) {
                 index_share_files_cli();
             })
             ->addLineBreak('-');
     })
+
+
+    ->addSubMenu('[I]ndexing', function (CliMenuBuilder $c) {
+        $c->setTitle('CLI Menu > Index')
+            ->addItem('Scan [a]ll files in $data["scandirs"]', function (CliMenu $menu) {
+                index_share_files_cli();
+            })
+            ->addItem('Scan [d]atumssortierte', function (CliMenu $menu) {
+                scan_datumsortierte_cli();
+            })            
+            ->addLineBreak('-');
+    })
+
+
+
+    ->addLineBreak('-')
+    ->addItem('Inf[o]', function (CliMenu $menu) {
+        info_cli();
+    }) 
+/*
+    ->addItem('First Item', $itemCallable)
+
+->addSubMenu('Compiled', function (CliMenuBuilder $d) use ($itemCallable) {
+    $d->setTitle('Compiled Languages')
+        ->addRadioItem('Rust', $itemCallable)
+        ->addRadioItem('Go', $itemCallable)
+        ->addRadioItem('Java', $itemCallable)
+        ->addRadioItems([
+            ['C++', $itemCallable],
+            ['C', $itemCallable]
+        ])
+    ;
+})
+*/
     ->setWidth(70)
     ->setBackgroundColour('black')
     ->build();

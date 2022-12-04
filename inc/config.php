@@ -8,6 +8,7 @@ $data["nextcloud"]["accounts"] = ["volker","nadine" ];
 $data["nextcloud"]["basedir"] = "/share/nextcloud/";
 $data["bashscript_folder"] = "/share/MediaManager/bash_functions/";
 $data["phockup_syncdir"] = "/share/AUTOSORT/";
+$data["verbose-copy"] = true;
 
 $data["scandirs"] = [
     "Bilder",

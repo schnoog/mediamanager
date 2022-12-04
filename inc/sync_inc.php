@@ -17,7 +17,7 @@ function SyncNextCloud(){
     for($x =0 ; $x < count($newfiles);$x++){
             $fn = $newfiles[$x];
             $nfn = str_replace($data["nextcloud"]["basedir"],$data["nextcloud"]["syncdir"],$fn);
-            echo "Copy $fn to $nfn " . PHP_EOL;
+            if($data["verbose-copy"]) echo "Copy $fn to $nfn " . PHP_EOL;
             mycopy($fn,$nfn);
     }
 }
